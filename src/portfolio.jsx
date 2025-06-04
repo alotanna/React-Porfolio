@@ -265,9 +265,11 @@ useEffect(() => {
               <div className="skill-category">
                 <h3><i className="fas fa-brain"></i> AI & Machine Learning</h3>
                 <ul className="skill-list">
-                  <li>scikit-learn</li>
-                  <li>AI Prompt Engineering</li>
-                  {/* Add the rest of your skills here */}
+                        <li>scikit-learn</li>
+                        <li>AI Prompt Engineering</li>
+                        <li>API Integration</li>
+                        <li>Chatbot Development</li>
+                        <li>Neural Networks</li>
                 </ul>
               </div>
               
