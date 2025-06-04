@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import austineImage from './assets/austine.jpeg';
 import healingCellsImage from './assets/Healingcells.png';
+import gaeaImage from './assets/GAEA.png';
+import gpaPredictorImage from './assets/GPA Predicter.png';
+import samaCareImage from './assets/SamaCare.png';
+import kelenneImage from './assets/Kelenne.png';
+import eventManagerImage from './assets/EventManager.png';
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -441,7 +446,7 @@ useEffect(() => {
               
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="GAEA.png" alt="Grow Africa Eat Africa" />
+                        <img src= {gaeaImage} alt="Grow Africa Eat Africa" />
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Grow Africa Eat Africa</h3>
@@ -460,7 +465,7 @@ useEffect(() => {
                 
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="GPA Predicter.png" alt="GPA Predictor Interface" />
+                        <img src= {gpaPredictorImage} alt="GPA Predictor Interface" />
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">AI GPA Predictor and Academic Advisor</h3>
@@ -479,7 +484,7 @@ useEffect(() => {
                 
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="SamaCare.png" alt="SamaCare" />
+                        <img src= {samaCareImage} alt="SamaCare" />
 
                     </div>
                     <div class="project-content">
@@ -503,7 +508,7 @@ useEffect(() => {
 
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Kelenne.png" alt="Kelenne Car Wash Interface" />
+                        <img src= {kelenneImage} alt="Kelenne Car Wash Interface" />
 
                     </div>
                     <div class="project-content">
@@ -524,7 +529,7 @@ useEffect(() => {
 
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="EventManager.png" alt="Event Manager Application Interface" />
+                        <img src= {eventManagerImage} alt="Event Manager Application Interface" />
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Event Manager Application  </h3>
