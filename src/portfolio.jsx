@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import austineImage from './assets/austine.jpeg';
+import healingCellsImage from './assets/Healingcells.png';
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -231,7 +233,7 @@ useEffect(() => {
                 </div>
               </div>
               <div className="about-image">
-                <img src="austine.jpeg" alt="Austine Iheji" />
+                <img src={austineImage} alt="Austine Iheji" />
               </div>
             </div>
           </div>
@@ -418,7 +420,7 @@ useEffect(() => {
             <div className="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="Healingcells.png" alt="Healthcare Project" />
+                        <img src={healingCellsImage} alt="Healthcare Project" />
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">HealingCells – Cancer Support Platform</h3>
