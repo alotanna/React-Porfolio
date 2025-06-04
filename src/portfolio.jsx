@@ -416,47 +416,126 @@ useEffect(() => {
             <p>My work focuses on creating human-centered solutions with measurable impact.</p>
             
             <div className="projects-grid">
-              <div className="project-card">
-                <div className="project-img">
-                  <img src="Healingcells.png" alt="Healthcare Project" />
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="Healingcells.png" alt="Healthcare Project" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">HealingCells – Cancer Support Platform</h3>
+                        <p class="project-desc">A web platform supporting cancer patients, survivors, and caregivers with reliable resources and emotional support. Designed based on research with actual patients to address emotional and informational needs.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="http://austineiheji.great-site.net/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/alotanna/cancerwebsite.git" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
                 </div>
-                <div className="project-content">
-                  <h3 className="project-title">HealingCells – Cancer Support Platform</h3>
-                  <p className="project-desc">A web platform supporting cancer patients, survivors, and caregivers with reliable resources and emotional support. Designed based on research with actual patients to address emotional and informational needs.</p>
-                  <div className="project-tech">
-                    <span className="tech-tag">HTML</span>
-                    <span className="tech-tag">CSS</span>
-                    <span className="tech-tag">JavaScript</span>
-                    <span className="tech-tag">PHP</span>
-                    <span className="tech-tag">MySQL</span>
-                  </div>
-                  <div className="project-links">
-                    <a href="http://austineiheji.great-site.net/" target="_blank" rel="noopener noreferrer"><i className="fas fa-external-link-alt"></i> Live Demo</a>
-                    <a href="https://github.com/alotanna/cancerwebsite.git" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i> Code</a>
-                  </div>
-                </div>
-              </div>
               
-              <div className="project-card">
-                <div className="project-img">
-                  <img src="GAEA.png" alt="Grow Africa Eat Africa" />
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="GAEA.png" alt="Grow Africa Eat Africa" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Grow Africa Eat Africa</h3>
+                        <p class="project-desc">Co-founded an initiative developing sustainable clay brick storage chambers to reduce post-harvest losses and extend crop shelf life for smallholder farmers across Africa.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Sustainability</span>
+                            <span class="tech-tag">Agriculture</span>
+                            <span class="tech-tag">Field Research</span>
+                            <span class="tech-tag">Product Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.canva.com/design/DAGnyFR38AQ/VXkQ8SHAzzlX1a6pYfNe2w/view?utm_content=DAGnyFR38AQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1bb35b3f9c" target="_blank"><i class="fas fa-external-link-alt"></i> Project Details</a>
+                        </div>
+                    </div>
                 </div>
-                <div className="project-content">
-                  <h3 className="project-title">Grow Africa Eat Africa</h3>
-                  <p className="project-desc">Co-founded an initiative developing sustainable clay brick storage chambers to reduce post-harvest losses and extend crop shelf life for smallholder farmers across Africa.</p>
-                  <div className="project-tech">
-                    <span className="tech-tag">Sustainability</span>
-                    <span className="tech-tag">Agriculture</span>
-                    <span className="tech-tag">Field Research</span>
-                    <span className="tech-tag">Product Design</span>
-                  </div>
-                  <div className="project-links">
-                    <a href="https://www.canva.com/design/DAGnyFR38AQ/VXkQ8SHAzzlX1a6pYfNe2w/view?utm_content=DAGnyFR38AQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1bb35b3f9c" target="_blank" rel="noopener noreferrer"><i className="fas fa-external-link-alt"></i> Project Details</a>
-                  </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="GPA Predicter.png" alt="GPA Predictor Interface" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI GPA Predictor and Academic Advisor</h3>
+                        <p class="project-desc">Co-developed an AI-powered academic advisor that predicts GPA based on lifestyle factors, trained with 92% accuracy and integrated with Cohere's Command-Xlarge language model for personalized advice.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Neural Networks</span>
+                            <span class="tech-tag">Cohere API</span>
+                            <span class="tech-tag">Data Science</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/alotanna/AI_GPA_Predictor_and_Academic_Advisor-.git" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              
-              {/* Add other project cards here */}
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="SamaCare.png" alt="SamaCare" />
+
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SamaCare - Bringing health care to your doorstep</h3>
+                        <p class="project-desc">Co-developed an AI-powered healthcare platform enabling patients to book appointments, access medical records, and receive symptom-based triage recommendations via an integrated machine learning chatbot using a Random Forest model hosted using Flask API. </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">ML</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Ama-Annor/SamaCare.git" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="Kelenne.png" alt="Kelenne Car Wash Interface" />
+
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Kelenne Car Wash Management System </h3>
+                        <p class="project-desc">Co-developed a fully functional web application for Kelenne Car Wash, enabling customers to seamlessly book appointments, view service offerings, and much more. </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/alotanna/Kelenne.git" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="EventManager.png" alt="Event Manager Application Interface" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Event Manager Application  </h3>
+                        <p class="project-desc">Designed and implemented an event management system capable of handling bill tracking, food coordination, activity scheduling, and venue logistics.•	Utilized Java for backend logic and FXML for a user-friendly interface. </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">FXML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/alotanna/EventManger.git" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
         </section>
