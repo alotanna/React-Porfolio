@@ -272,8 +272,45 @@ useEffect(() => {
                         <li>Neural Networks</li>
                 </ul>
               </div>
-              
-              {/* Add other skill categories here */}
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Web & Software Development</h3>
+                    <ul class="skill-list">
+                        <li>Django</li>
+                        <li>Streamlit</li>
+                        <li>MySQL</li>
+                        <li>Jenkins</li>
+                        <li>Version Control (Git)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-bar"></i> Data & Tools</h3>
+                    <ul class="skill-list">
+                        <li>Pandas</li>
+                        <li>NumPy</li>
+                        <li>Excel</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-microchip"></i> Hardware</h3>
+                    <ul class="skill-list">
+                        <li>VHDL</li>
+                        <li>MARS 4-5</li>
+                        <li>Logisim (Single-Cycle CPU Design)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Research</li>
+                        <li>Communication</li>
+                        <li>Problem-Solving</li>
+                        <li>Teamwork</li>
+                        <li>Human-Centered Design</li>
+                    </ul>
+                </div>
             </div>
           </div>
         </section>
