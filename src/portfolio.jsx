@@ -247,10 +247,18 @@ useEffect(() => {
               <div className="skill-category">
                 <h3><i className="fas fa-code"></i> Programming Languages</h3>
                 <ul className="skill-list">
-                  <li>Python</li>
-                  <li>Java</li>
-                  <li>JavaScript</li>
-                  {/* Add the rest of your skills here */}
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>C++</li>
+                        <li>SQL</li>
+                        <li>MIPS (Assembly)</li>
+                        <li>R</li>
+                        <li>FXML</li>
+                        <li>HTML, CSS, PHP</li>
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>React Native</li>
                 </ul>
               </div>
               
