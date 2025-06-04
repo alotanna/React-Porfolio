@@ -237,7 +237,7 @@ useEffect(() => {
           </div>
         </section>
 
-        {/* Skills Section - Abbreviated */}
+        {/* Skills Section */}
         <section className="skills" id="skills">
           <div className="container">
             <h2 className="section-title">My Skills</h2>
@@ -315,39 +315,101 @@ useEffect(() => {
           </div>
         </section>
 
-        {/* Experience Section - Abbreviated */}
+        {/* Experience Section */}
         <section className="experience" id="experience">
           <div className="container">
             <h2 className="section-title">Professional Experience</h2>
             <p>My journey blends technical skill, social impact, and real-world experience across diverse sectors to build thoughtful, people-centered solutions.</p>
 
             <div className="timeline">
-              <div className="timeline-item">
-                <div className="timeline-date">January 2025 - May 2025</div>
-                <h3 className="timeline-title">AI and Automation Extern</h3>
-                <p className="timeline-subtitle">Outamation - Texas, United States of America</p>
+              <div class="timeline-item">
+                <div class="timeline-date">January 2025 - May 2025</div>
+                <h3 class="timeline-title">AI and Automation Extern</h3>
+                <p class="timeline-subtitle">Outamation - Texas, United States of America</p>
                 <ul>
-                  <li>Engineered AI-powered workflows to automate document classification and data extraction, using Natural Language Processing (NLP), Computer Vision, and Python-based pipelines (PyMuPDF, OCR techniques)</li>
-                  <li>Designed and implemented a retrieval system using LlamaIndex and Retrieval-Augmented Generation (RAG), boosting information discovery accuracy across mortgage-related files; benchmarked open-source AI models to fine-tune performance</li>
+                    <li>Engineered AI-powered workflows to automate document classification and data extraction, using Natural Language Processing (NLP), Computer Vision, and Python-based pipelines (PyMuPDF, OCR techniques)</li>
+                    <li>Designed and implemented a retrieval system using LlamaIndex and Retrieval-Augmented Generation (RAG), boosting information discovery accuracy across mortgage-related files; benchmarked open-source AI models to fine-tune performance</li>
+                    <li>Authored a strategic technical report distilling insights on leading AI solutions for document automation, detailing system limitations, enhancement techniques, and practical deployment considerations for enterprise use</li>
                 </ul>
-              </div>
+            </div>
 
-              <div className="timeline-item">
-                <div className="timeline-date">May 2022 - January 2025</div>
-                <h3 className="timeline-title">Software Engineer and Sales Manager</h3>
-                <p className="timeline-subtitle">Laotinoa Local Solutions - Ibadan, Oyo state, Nigeria</p>
-                <ul>
-                  <li>Built a custom inventory management system from scratch to digitize and centralize procurement and stock records, replacing Excel and enabling accurate, real-time tracking of over 200 product lines</li>
-                  <li>Integrated live inventory and pricing data into an AI-powered customer service assistant, drastically reducing response time and enhancing customer satisfaction</li>
-                </ul>
-              </div>
-              
-              {/* Add other timeline items here */}
+              <div class="timeline-item">
+                    <div class="timeline-date">May 2022 - January 2025</div>
+                    <h3 class="timeline-title">Software Engineer and Sales Manager</h3>
+                    <p class="timeline-subtitle">Laotinoa Local Solutions - Ibadan, Oyo state, Nigeria</p>
+                    <ul>
+                        <li>Built a custom inventory management system from scratch to digitize and centralize procurement and stock records, replacing Excel and enabling accurate, real-time tracking of over 200 product lines</li>
+                        <li>Integrated live inventory and pricing data into an AI-powered customer service assistant, drastically reducing response time and enhancing customer satisfaction</li>
+                        <li>Optimized restocking workflows by embedding demand forecasting into the system, leading to a 20% reduction in inventory-related losses and more efficient supplier coordination</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">September 2023 - November 2023</div>
+                    <h3 class="timeline-title">Research Intern</h3>
+                    <p class="timeline-subtitle">Colton Alexander - Colorado, USA</p>
+                    <ul>
+                        <li>Spearheaded AI-enhanced market research to identify high-potential startups in the renewable energy sector, leveraging custom-built web scraping scripts and NLP tools to extract and analyze company data</li>
+                        <li>Developed a data-driven profiling framework to assess financial health, technology differentiation, and sustainability impact, enabling the VC team to make evidence-backed portfolio decisions</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">June 2023 - July 2023</div>
+                    <h3 class="timeline-title">Venture Capital Extern</h3>
+                    <p class="timeline-subtitle">IgniteXL Ventures - United States of America</p>
+                    <ul>
+                        <li>Leveraged prompt engineering and AI-powered research tools to streamline due diligence and enhance internal workflows, accelerating the evaluation of early-stage startups in the emerging tech and consumer innovation sectors</li>
+                        <li>Identified high-potential investment opportunities by synthesizing market trend data, founder profiles, and competitive landscapes, earning formal recognition for excellence in venture sourcing and analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">January 2024 - Present</div>
+                    <h3 class="timeline-title">Peer Coach</h3>
+                    <p class="timeline-subtitle">CCAPS, Ashesi University - Ghana</p>
+                    <ul>
+                        <li>Provide academic and emotional support to peers</li>
+                        <li>Facilitated 21 group sessions on mental health and resilience</li>
+                        <li>Guide students through stress management and study techniques</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">March 2024 - Present</div>
+                    <h3 class="timeline-title">Digital Health Champion</h3>
+                    <p class="timeline-subtitle">African Digital Health Student Network</p>
+                    <ul>
+                        <li>Advocate for adoption of digital tools in African healthcare systems</li>
+                        <li>Contribute to research and events focused on digital health literacy</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">September 2023 - Present</div>
+                    <h3 class="timeline-title">Student Volunteer</h3>
+                    <p class="timeline-subtitle">Code4All Initiative</p>
+                    <ul>
+
+                        
+                        <li>Designed and facilitated interactive workshops to elevate the digital literacy of 70+ students, equipping them with essential tech skills for academic and professional success.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">August 2023 - February 2025</div>
+                    <h3 class="timeline-title">Senior Ambassador</h3>
+                    <p class="timeline-subtitle">Extern - New York, USA</p>
+                    <ul>
+                        <li>Spearheaded outreach campaigns that led to 200+ externship applications with top brands</li>
+                        <li>Provided application guidance to prospective students, increasing program visibility</li>
+                    </ul>
+                </div>
             </div>
           </div>
         </section>
 
-        {/* Projects Section - Abbreviated */}
+        {/* Projects Section*/}
         <section className="projects" id="projects">
           <div className="container">
             <h2 className="section-title">Featured Projects</h2>
