@@ -253,12 +253,14 @@ useEffect(() => {
           <div className="container">
             <div className="about-content">
               <div className="about-text">
-<h2 className="section-title">About Austine</h2>
-<p>Hi there! I’m Austine,a Computer Science student at Ashesi University with an unexpected sidekick: a background in Human Physiology. Yep, I speak both binary and biology. This combo helps me look at tech not just as lines of code, but as tools to solve real, human problems.</p>
+              <h2 className="section-title">About Austine</h2>
+              <p>Hey, I’m Austine. I study Computer Science at Ashesi University, but my story didn’t start with code. I actually began in Human Physiology, which means I know a thing or two about how the human body works — and now I’m figuring out how technology can work better for humans too.</p>
 
-<p>I’m passionate about creating impact where it matters most, whether that’s building <em>HealingCells</em>, a cancer support platform designed with empathy at its core, or co-leading <em>Grow Africa Eat Africa</em> to help reduce post-harvest losses (because honestly, food should be eaten, not wasted).</p>
+              <p>I care deeply about using tech for good. I built <strong>HealingCells</strong>, a cancer support platform that puts people first, and co-founded <strong>Grow Africa Eat Africa</strong>, an initiative focused on reducing post-harvest losses. Because if we can grow it, we should eat it — simple logic.</p>
 
-<p>These days, I spend my time blending logic and compassion, crafting solutions that are as thoughtful as they are functional. I’m basically on a mission to make tech less about the hype and more about helping people. And yes, I still Google error messages like the rest of us.</p>
+              <p>These days, I spend my time building projects that mix code with compassion. Whether it’s a platform, a tool, or a half-broken prototype I swear I’ll fix soon, I’m always thinking about how tech can solve real problems and make life just a bit better. And yes, I talk to my bugs like they're coworkers. Sometimes they even listen.</p>
+              
+              <p>When I’m not coding, you’ll find me diving into the latest AI news, experimenting with new recipes in the kitchen, rewatching comfort series from 2010 like they just came out yesterday, or trying (and failing) to convince my friends I’m not just a nerd who talks to computers — even though, well... I kind of am.</p>
 
                 <div className="about-stats">
                   <br />
