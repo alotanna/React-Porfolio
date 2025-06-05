@@ -253,10 +253,13 @@ useEffect(() => {
           <div className="container">
             <div className="about-content">
               <div className="about-text">
-                <h2 className="section-title">About Austine</h2>
-                <p>I am a Computer Science student at Ashesi University with a unique background in Human Physiology, bringing a holistic perspective to technology solutions. My passion lies at the intersection of impact and technology, where I develop empathetic, human-centered solutions.</p>
-                <p>With experience leading community-focused projects like the HealingCells cancer support platform and the Grow Africa Eat Africa initiative tackling post-harvest losses, I am committed to creating sustainable impact through innovation.</p>
-                <p>Currently, I combine my technical skills in programming with my understanding of human systems to build solutions that address real world challenges.</p>
+<h2 className="section-title">About Austine</h2>
+<p>Hi there! I’m Austine,a Computer Science student at Ashesi University with an unexpected sidekick: a background in Human Physiology. Yep, I speak both binary and biology. This combo helps me look at tech not just as lines of code, but as tools to solve real, human problems.</p>
+
+<p>I’m passionate about creating impact where it matters most, whether that’s building <em>HealingCells</em>, a cancer support platform designed with empathy at its core, or co-leading <em>Grow Africa Eat Africa</em> to help reduce post-harvest losses (because honestly, food should be eaten, not wasted).</p>
+
+<p>These days, I spend my time blending logic and compassion, crafting solutions that are as thoughtful as they are functional. I’m basically on a mission to make tech less about the hype and more about helping people. And yes, I still Google error messages like the rest of us.</p>
+
                 <div className="about-stats">
                   <br />
                   <div className="stat">
