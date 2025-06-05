@@ -157,6 +157,33 @@ useEffect(() => {
   return () => window.removeEventListener('scroll', handleScroll);
 }, []);
 
+  //this useEffect for active section highlighting
+useEffect(() => {
+  const handleScroll = () => {
+    const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
+    const scrollPosition = window.scrollY + 100; // Offset for header
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = document.getElementById(sections[i]);
+      if (section && section.offsetTop <= scrollPosition) {
+        setActiveSection(sections[i]);
+        
+        // Update nav links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sections[i]}`) {
+            link.classList.add('active');
+          }
+        });
+        break;
+      }
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
 
   return (
     <>
