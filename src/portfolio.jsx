@@ -142,11 +142,26 @@ useEffect(() => {
     };
   }, []);
 
+  //this useEffect for back to top button visibility
+useEffect(() => {
+  const handleScroll = () => {
+    const backToTop = document.querySelector('.back-to-top');
+    if (window.pageYOffset > 300) {
+      backToTop?.classList.add('show');
+    } else {
+      backToTop?.classList.remove('show');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+
   return (
     <>
       {/* Add external stylesheets */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link rel="stylesheet" href=".css" />
       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       
       <div className="portfolio-container">
