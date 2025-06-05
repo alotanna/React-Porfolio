@@ -254,7 +254,7 @@ useEffect(() => {
             <div className="about-content">
               <div className="about-text">
               <h2 className="section-title">About Austine</h2>
-              <p>Hey, I’m Austine. I study Computer Science at Ashesi University, but my story didn’t start with code. I actually began in Human Physiology, which means I know a thing or two about how the human body works, and now I’m figuring out how technology can work better for humans too.</p>
+              <p>Hello, internet travelerupdated, I’m Austine. I study Computer Science at Ashesi University, but my story didn’t start with code. I actually began in Human Physiology, which means I know a thing or two about how the human body works, and now I’m figuring out how technology can work better for humans too.</p>
 
               <p>I care deeply about using tech for good. I built <strong>HealingCells</strong>, a cancer support platform that puts people first, and co-founded <strong>Grow Africa Eat Africa</strong>, an initiative focused on reducing post-harvest losses. Because if we can grow it, we should eat it, simple logic.</p>
 
