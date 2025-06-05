@@ -218,12 +218,12 @@ useEffect(() => {
             <nav>
               <div className="logo">AUSTINE<span>IHEJI</span></div>
               <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`} id="navLinks">
-                <li><a href="#home" className="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" className={activeSection === 'home' ? 'active' : ''}>Home</a></li>
+                <li><a href="#about" className={activeSection === 'about' ? 'active' : ''}>About</a></li>
+                <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
+                <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''}>Experience</a></li>
+                <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
+                <li><a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
               </ul>
               <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
