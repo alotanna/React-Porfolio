@@ -593,7 +593,9 @@ useEffect(() => {
         <section className="contact" id="contact">
           <div className="container">
             <h2 className="section-title">Get In Touch</h2>
-            <p>Interested in collaborating or have a project in mind? Feel free to reach out.</p>
+            <p>Got a project idea? A wild collaboration dream? Or just bored and want to send a message? I'm here for it.</p>
+            <p>This is not a drill, or a fake contact section. I actually set this thing up (and triple-checked it after yelling at my screen a few times).</p> 
+            <p>So go ahead, type something real(like your real email and messgae), hit send, and voilà-you’ll get a confirmation, I’ll get your message, and the universe will be in balance. Let’s do something epic. Or at least mildly interesting. Either way, I’m excited!</p>
             
             <div className="contact-wrapper">
               <div className="contact-info">
