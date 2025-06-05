@@ -258,7 +258,7 @@ useEffect(() => {
 
               <p>I care deeply about using tech for good. I built <strong>HealingCells</strong>, a cancer support platform that puts people first, and co-founded <strong>Grow Africa Eat Africa</strong>, an initiative focused on reducing post-harvest losses. Because if we can grow it, we should eat it, simple logic.</p>
 
-              <p>These days, I spend my time building projects that mix code with compassion. Whether it’s a platform, a tool, or a half-broken prototype I promise I’ll fix soon, I’m always thinking about how tech can solve real problems and make life just a bit better. And yes, I talk to my bugs like they're coworkers. Sometimes they even listen.</p>
+              <p>These days, I spend my time building projects that mix code with compassion. Whether it’s a platform, a tool, or a half-broken prototype I promised I’ll fix soon, I’m always thinking about how tech can solve real problems and make life just a bit better. And yes, I talk to my bugs like they're coworkers. Sometimes they even listen.</p>
               
               <p>When I’m not coding, you’ll find me diving into the latest AI news, experimenting with new recipes in the kitchen, rewatching comfort series from 2010 like they just came out yesterday, or trying (and failing) to convince my friends I’m not just a nerd who talks to computers, even though, well... I kind of am.</p>
 
