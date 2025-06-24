@@ -505,7 +505,7 @@ useEffect(() => {
                             <span class="tech-tag">Product Design</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://www.canva.com/design/DAGnyFR38AQ/VXkQ8SHAzzlX1a6pYfNe2w/view?utm_content=DAGnyFR38AQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1bb35b3f9c" target="_blank"><i class="fas fa-external-link-alt"></i> Project Details</a>
+                            <a href="https://www.canva.com/design/DAGrJt1Yj_A/EvaKNcv4KnEHjXsmhXDwpw/view?utm_content=DAGrJt1Yj_A&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h540085aeb4" target="_blank"><i class="fas fa-external-link-alt"></i> Project Details</a>
                         </div>
                     </div>
                 </div>
