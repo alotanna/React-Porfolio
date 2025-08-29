@@ -377,6 +377,16 @@ useEffect(() => {
 
             <div className="timeline">
               <div class="timeline-item">
+                <div class="timeline-date">June 2025 - Present</div>
+                <h3 class="timeline-title">Software Engineering Intern (QA-Focused)</h3>
+                <p class="timeline-subtitle">Profibook - United States of America</p>
+                <ul>
+                    <li>Designed and executed 3,000+ automated unit tests with Playwright, Jest, and Flutter, which reduced deployment errors by 50% and ensured greater stability across web and mobile applications</li>
+                    <li>Performed smoke tests that improved code quality by 15%, strengthening release confidence and user experience</li>
+                    <li>Collaborated with senior developers to debug and refine backend services in NestJS and TypeScript, quickly adapting to new frameworks and applying feedback to accelerate learning</li>
+                </ul>
+            </div>
+              <div class="timeline-item">
                 <div class="timeline-date">January 2025 - May 2025</div>
                 <h3 class="timeline-title">AI and Automation Extern</h3>
                 <p class="timeline-subtitle">Outamation - Texas, United States of America</p>
