@@ -381,7 +381,8 @@ useEffect(() => {
                 <h3 class="timeline-title">Software Engineering Intern (QA-Focused)</h3>
                 <p class="timeline-subtitle">Profibook - United States of America</p>
                 <ul>
-                    <li>Designed and executed 3,000+ automated unit tests with Playwright, Jest, and Flutter, which reduced deployment errors by 50% and ensured greater stability across web and mobile applications</li>
+                    <li>Designed and executed 3,000+ automated unit tests with Jest, which reduced deployment errors by 50% and ensured greater stability across web and mobile applications</li>
+                    <li>Identified inefficiencies in the manual web testing process and automated it using Playwright, cutting testing time by more than 80 percent and significantly improving release efficiency</li>
                     <li>Performed smoke tests that improved code quality by 15%, strengthening release confidence and user experience</li>
                     <li>Collaborated with senior developers to debug and refine backend services in NestJS and TypeScript, quickly adapting to new frameworks and applying feedback to accelerate learning</li>
                 </ul>
