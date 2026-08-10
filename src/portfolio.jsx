@@ -7,6 +7,8 @@ import samaCareImage from './assets/SamaCare.png';
 import kelenneImage from './assets/Kelenne.png';
 import eventManagerImage from './assets/EventManager.png';
 
+import { Analytics } from "@vercel/analytics/next"
+
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
