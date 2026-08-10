@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import austineImage from './assets/austine.jpeg';
 import healingCellsImage from './assets/Healingcells.png';
 import gaeaImage from './assets/GAEA.png';
@@ -13,70 +13,209 @@ const Portfolio = () => {
   const [typedText, setTypedText] = useState('');
   const [formStatus, setFormStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const typedTextRef = useRef(null);
-  const [stars, setStars] = useState([]);
 
-  // Typed text effect
+  const navigation = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'capabilities', label: 'Capabilities' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' },
+  ];
+
+  const heroStats = [
+    { value: '3+', label: 'Years building products' },
+    { value: '6+', label: 'Shipped projects' },
+    { value: '15+', label: 'Technologies used' },
+  ];
+
+  const focusCards = [
+    {
+      title: 'Product thinking',
+      description: 'I turn rough ideas into focused, usable digital experiences with a strong visual point of view.',
+    },
+    {
+      title: 'Human-centered tech',
+      description: 'My work starts with the people involved, especially in health, education, and community impact.',
+    },
+    {
+      title: 'Execution speed',
+      description: 'I can move from concept to working interface without losing polish, structure, or clarity.',
+    },
+  ];
+
+  const capabilityGroups = [
+    {
+      title: 'Frontend + Interfaces',
+      items: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Responsive UI', 'Design systems'],
+    },
+    {
+      title: 'AI + Automation',
+      items: ['Python', 'scikit-learn', 'Prompt engineering', 'API integration', 'RAG', 'Chatbots'],
+    },
+    {
+      title: 'Product Engineering',
+      items: ['Django', 'Node.js workflows', 'MySQL', 'Git', 'Jenkins', 'Flask', 'Streamlit'],
+    },
+    {
+      title: 'Research + Hardware',
+      items: ['Research', 'Human-centered design', 'VHDL', 'MIPS', 'Logisim', 'Data analysis'],
+    },
+  ];
+
+  const experienceItems = [
+    {
+      period: 'June 2025 - Present',
+      title: 'Software Engineering Intern, QA Focused',
+      org: 'Profibook - United States of America',
+      bullets: [
+        'Built and maintained thousands of Jest tests to raise release confidence across web and mobile flows.',
+        'Automated manual web testing with Playwright, reducing repetitive QA effort and speeding up delivery.',
+        'Worked with NestJS and TypeScript teams to debug backend services and improve product stability.',
+      ],
+    },
+    {
+      period: 'January 2025 - May 2025',
+      title: 'AI and Automation Extern',
+      org: 'Outamation - Texas, United States of America',
+      bullets: [
+        'Created document-processing workflows using NLP, OCR, and Python pipelines.',
+        'Developed a retrieval system with LlamaIndex and RAG for mortgage file discovery.',
+        'Produced a technical report on AI tools, limitations, and deployment strategy.',
+      ],
+    },
+    {
+      period: 'May 2022 - January 2025',
+      title: 'Software Engineer and Sales Manager',
+      org: 'Laotinoa Local Solutions - Ibadan, Nigeria',
+      bullets: [
+        'Built inventory software from scratch to replace spreadsheets and centralize stock records.',
+        'Connected inventory data to an AI support assistant to improve response speed and consistency.',
+        'Improved restocking decisions through forecasting, reducing avoidable inventory losses.',
+      ],
+    },
+  ];
+
+  const projectItems = [
+    {
+      title: 'HealingCells',
+      description: 'Cancer support platform designed from patient research to help people find reliable resources and emotional support.',
+      image: healingCellsImage,
+      tags: ['Health tech', 'PHP', 'MySQL', 'UX'],
+      links: [
+        { label: 'Live Demo', href: 'http://austineiheji.great-site.net/' },
+        { label: 'Code', href: 'https://github.com/alotanna/cancerwebsite.git' },
+      ],
+      featured: true,
+    },
+    {
+      title: 'Grow Africa Eat Africa',
+      description: 'A sustainability-focused initiative using clay brick storage chambers to reduce post-harvest losses for farmers.',
+      image: gaeaImage,
+      tags: ['Sustainability', 'Field research', 'Product design'],
+      links: [{ label: 'Details', href: 'https://www.canva.com/design/DAGrJt1Yj_A/EvaKNcv4KnEHjXsmhXDwpw/view?utm_content=DAGrJt1Yj_A&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h540085aeb4' }],
+    },
+    {
+      title: 'AI GPA Predictor',
+      description: 'Academic advisor prototype that predicts GPA and generates personalized guidance with AI assistance.',
+      image: gpaPredictorImage,
+      tags: ['Python', 'Neural nets', 'Cohere API'],
+      links: [{ label: 'Code', href: 'https://github.com/alotanna/AI_GPA_Predictor_and_Academic_Advisor-.git' }],
+    },
+    {
+      title: 'SamaCare',
+      description: 'Healthcare platform that supports appointments, records, and symptom-based triage through a chatbot.',
+      image: samaCareImage,
+      tags: ['Healthcare', 'Python', 'Flask', 'ML'],
+      links: [{ label: 'Code', href: 'https://github.com/Ama-Annor/SamaCare.git' }],
+    },
+    {
+      title: 'Kelenne Car Wash',
+      description: 'Appointment and service management system for a car wash business with a clean customer-facing experience.',
+      image: kelenneImage,
+      tags: ['Web app', 'PHP', 'MySQL'],
+      links: [{ label: 'Code', href: 'https://github.com/alotanna/Kelenne.git' }],
+    },
+    {
+      title: 'Event Manager',
+      description: 'Java and FXML application for handling logistics, scheduling, and bill tracking for events.',
+      image: eventManagerImage,
+      tags: ['Java', 'FXML'],
+      links: [{ label: 'Code', href: 'https://github.com/alotanna/EventManger.git' }],
+    },
+  ];
+
+  const contactDetails = [
+    {
+      label: 'Email',
+      values: ['austine.iheji@ashesi.edu.gh', 'austineihejiben12@gmail.com'],
+      icon: 'fa-envelope',
+    },
+    {
+      label: 'Phone',
+      values: ['(+233) 534817766', '(+234) 8102903790'],
+      icon: 'fa-phone',
+    },
+    {
+      label: 'Location',
+      values: ['Ashesi University, Ghana'],
+      icon: 'fa-location-dot',
+    },
+  ];
+
   useEffect(() => {
-    const texts = [
-      'building human-centered solutions',
-      'bridging healthcare & technology',
-      'creating sustainable impact',
-      'solving complex problems'
-    ];
+    const texts = ['product design', 'frontend systems', 'AI-enabled workflows', 'human-centered interfaces'];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
 
     const type = () => {
       const currentText = texts[textIndex];
-      
+
       if (isDeleting) {
         setTypedText(currentText.substring(0, charIndex - 1));
-        charIndex--;
+        charIndex -= 1;
       } else {
         setTypedText(currentText.substring(0, charIndex + 1));
-        charIndex++;
+        charIndex += 1;
       }
-      
+
       if (!isDeleting && charIndex === currentText.length) {
         isDeleting = true;
-        setTimeout(type, 2000);
+        setTimeout(type, 1500);
         return;
       }
-      
+
       if (isDeleting && charIndex === 0) {
         isDeleting = false;
         textIndex = (textIndex + 1) % texts.length;
       }
-      
-      const speed = isDeleting ? 50 : 100;
-      setTimeout(type, speed);
+
+      setTimeout(type, isDeleting ? 45 : 80);
     };
 
-    const timer = setTimeout(type, 1000);
+    const timer = setTimeout(type, 800);
     return () => clearTimeout(timer);
   }, []);
 
-  // Create stars background
-useEffect(() => {
-  const createStars = () => {
-    const starsArray = [];
-    for (let i = 0; i < 150; i++) {
-      starsArray.push({
-        id: i,
-        top: Math.random() * 100,
-        left: Math.random() * 100,
-        size: Math.random() * 3 + 1,
-        delay: Math.random() * 3,
-        duration: 2 + Math.random() * 2
-      });
-    }
-    return starsArray;
-  };
-  
-  setStars(createStars()); // Store stars in state
-}, []);
+  useEffect(() => {
+    const observedSections = navigation.map((item) => document.getElementById(item.id)).filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-45% 0px -45% 0px', threshold: 0.01 },
+    );
+
+    observedSections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   // Handle form submission with EmailJS
   const handleSubmit = async (e) => {
@@ -126,7 +265,6 @@ useEffect(() => {
     }
   };
 
-  // Load EmailJS script
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
@@ -142,550 +280,311 @@ useEffect(() => {
     };
   }, []);
 
-  //this useEffect for back to top button visibility
-useEffect(() => {
-  const handleScroll = () => {
-    const backToTop = document.querySelector('.back-to-top');
-    if (window.pageYOffset > 300) {
-      backToTop?.classList.add('show');
-    } else {
-      backToTop?.classList.remove('show');
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
-
-  //this useEffect for active section highlighting
-useEffect(() => {
-  const handleScroll = () => {
-    const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
-    const scrollPosition = window.scrollY + 100; // Offset for header
-
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const section = document.getElementById(sections[i]);
-      if (section && section.offsetTop <= scrollPosition) {
-        setActiveSection(sections[i]);
-        
-        // Update nav links
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sections[i]}`) {
-            link.classList.add('active');
-          }
-        });
-        break;
-      }
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
-
-
   return (
     <>
-      {/* Add external stylesheets */}
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      
-      <div className="portfolio-container">
+      <div className="portfolio-shell">
+        <div className="page-orb orb-one" aria-hidden="true"></div>
+        <div className="page-orb orb-two" aria-hidden="true"></div>
+        <div className="page-orb orb-three" aria-hidden="true"></div>
 
+        <header className="site-header">
+          <div className="container header-inner">
+            <a className="brand" href="#home" aria-label="Austine Iheji home">
+              <span className="brand-mark">AI</span>
+              <span className="brand-text">
+                Austine <strong>Iheji</strong>
+              </span>
+            </a>
 
-        {/* Stars Background */}
-        <div className="stars" id="stars">
-        {stars.map((star) => (
-            <div
-            key={star.id}
-            className="star"
-            style={{
-                top: `${star.top}%`,
-                left: `${star.left}%`,
-                width: `${star.size}px`,
-                height: `${star.size}px`,
-                animationDelay: `${star.delay}s`,
-                animationDuration: `${star.duration}s`
-            }}
-            />
-        ))}
-        </div>
-
-        {/* Header */}
-        <header id="header">
-          <div className="container">
-            <nav>
-              <div className="logo">AUSTINE<span>IHEJI</span></div>
-              <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`} id="navLinks">
-                <li><a href="#home" className={activeSection === 'home' ? 'active' : ''}>Home</a></li>
-                <li><a href="#about" className={activeSection === 'about' ? 'active' : ''}>About</a></li>
-                <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
-                <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''}>Experience</a></li>
-                <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
-                <li><a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
-              </ul>
-              <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
-              </div>
+            <nav className={`site-nav ${isMenuOpen ? 'is-open' : ''}`}>
+              {navigation.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={activeSection === item.id ? 'active' : ''}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a className="nav-cta" href="#contact" onClick={() => setIsMenuOpen(false)}>
+                Start a conversation
+              </a>
             </nav>
+
+            <button
+              type="button"
+              className={`menu-toggle ${isMenuOpen ? 'is-open' : ''}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle navigation"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </header>
 
-        {/* Hero Section */}
-        <section className="hero" id="home">
-          <div className="container">
-            <div className="hero-content">
-              <h1>INNOVATING AT THE INTERSECTION OF IMPACT & TECHNOLOGY</h1>
-              <p>I'm an interdisciplinary problem-solver with expertise in <span className="typed-text">{typedText}</span></p>
-              <div className="hero-buttons">
-                <a href="#projects" className="btn">View My Work</a>
-                <a href="#contact" className="btn secondary-btn">Get In Touch</a>
-              </div>
-            </div>
-            <div className="cosmic-circle"></div>
-            <div className="orbit"></div>
-          </div>
-        </section>
+        <main>
+          <section className="hero section" id="home">
+            <div className="container hero-grid">
+              <div className="hero-copy reveal-up">
+                <p className="eyebrow">Austine Iheji | Tech, product, and human-centered systems</p>
+                <h1>Designing digital products that look refined and feel effortless.</h1>
+                <p className="hero-lede">
+                  I build interfaces, products, and AI-enabled workflows with a clear visual point of view and a bias toward useful, elegant execution.
+                </p>
 
-        {/* About Section */}
-        <section className="about" id="about">
-          <div className="container">
-            <div className="about-content">
-              <div className="about-text">
-              <h2 className="section-title">About Austine</h2>
-              <p>Hello, internet traveler, I’m Austine. I study Computer Science at Ashesi University, but my story didn’t start with code. I actually began in Human Physiology, which means I know a thing or two about how the human body works, and now I’m figuring out how technology can work better for humans too.</p>
+                <div className="hero-inline">
+                  <span className="label">Currently focused on</span>
+                  <strong>{typedText}</strong>
+                </div>
 
-              <p>I care deeply about using tech for good. I built <strong>HealingCells</strong>, a cancer support platform that puts people first, and co-founded <strong>Grow Africa Eat Africa</strong>, an initiative focused on reducing post-harvest losses. Because if we can grow it, we should eat it, simple logic.</p>
+                <div className="hero-actions">
+                  <a className="btn btn-primary" href="#projects">
+                    View selected work
+                  </a>
+                  <a className="btn btn-ghost" href="#contact">
+                    Contact me
+                  </a>
+                </div>
 
-              <p>These days, I spend my time building projects that mix code with compassion. Whether it’s a platform, a tool, or a half-broken prototype I promised I’ll fix soon, I’m always thinking about how tech can solve real problems and make life just a bit better. And yes, I talk to my bugs like they're coworkers. Sometimes they even listen.</p>
-              
-              <p>When I’m not coding, you’ll find me diving into the latest AI news, experimenting with new recipes in the kitchen, rewatching comfort series from 2010 like they just came out yesterday, or trying (and failing) to convince my friends I’m not just a nerd who talks to computers, even though, well... I kind of am.</p>
-
-                <div className="about-stats">
-                  <br />
-                  <div className="stat">
-                    <h3>Education</h3>
-                    <p>BSc. Computer Science, Ashesi University</p>
-                  </div>
-                  <div className="stats">
-                    <div className="stat-box">
-                      <div className="stat-number">3+</div>
-                      <div className="stat-label">Years of Experience</div>
-                    </div>
-                    <div className="stat-box">
-                      <div className="stat-number">6+</div>
-                      <div className="stat-label">Major Projects</div>
-                    </div>
-                    <div className="stat-box">
-                      <div className="stat-number">15+</div>
-                      <div className="stat-label">Tech Skills</div>
-                    </div>
-                  </div>
+                <div className="hero-stats">
+                  {heroStats.map((stat) => (
+                    <article key={stat.label} className="stat-chip">
+                      <strong>{stat.value}</strong>
+                      <span>{stat.label}</span>
+                    </article>
+                  ))}
                 </div>
               </div>
-              <div className="about-image">
-                <img src={austineImage} alt="Austine Iheji" />
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Skills Section */}
-        <section className="skills" id="skills">
-          <div className="container">
-            <h2 className="section-title">My Skills</h2>
-            <p>I've developed a diverse skill set that bridges technical expertise with human-centered understanding.</p>
-            
-            <div className="skills-container">
-              <div className="skill-category">
-                <h3><i className="fas fa-code"></i> Programming Languages</h3>
-                <ul className="skill-list">
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                        <li>C++</li>
-                        <li>SQL</li>
-                        <li>MIPS (Assembly)</li>
-                        <li>R</li>
-                        <li>FXML</li>
-                        <li>HTML, CSS, PHP</li>
-                        <li>React</li>
-                        <li>TypeScript</li>
-                        <li>React Native</li>
-                </ul>
-              </div>
-              
-              <div className="skill-category">
-                <h3><i className="fas fa-brain"></i> AI & Machine Learning</h3>
-                <ul className="skill-list">
-                        <li>scikit-learn</li>
-                        <li>AI Prompt Engineering</li>
-                        <li>API Integration</li>
-                        <li>Chatbot Development</li>
-                        <li>Neural Networks</li>
-                </ul>
-              </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-laptop-code"></i> Web & Software Development</h3>
-                    <ul class="skill-list">
-                        <li>Django</li>
-                        <li>Streamlit</li>
-                        <li>MySQL</li>
-                        <li>Jenkins</li>
-                        <li>Version Control (Git)</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-bar"></i> Data & Tools</h3>
-                    <ul class="skill-list">
-                        <li>Pandas</li>
-                        <li>NumPy</li>
-                        <li>Excel</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-microchip"></i> Hardware</h3>
-                    <ul class="skill-list">
-                        <li>VHDL</li>
-                        <li>MARS 4-5</li>
-                        <li>Logisim (Single-Cycle CPU Design)</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-users"></i> Soft Skills</h3>
-                    <ul class="skill-list">
-                        <li>Research</li>
-                        <li>Communication</li>
-                        <li>Problem-Solving</li>
-                        <li>Teamwork</li>
-                        <li>Human-Centered Design</li>
-                    </ul>
-                </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Experience Section */}
-        <section className="experience" id="experience">
-          <div className="container">
-            <h2 className="section-title">Professional Experience</h2>
-            <p>My journey blends technical skill, social impact, and real-world experience across diverse sectors to build thoughtful, people-centered solutions.</p>
-
-            <div className="timeline">
-              <div class="timeline-item">
-                <div class="timeline-date">June 2025 - Present</div>
-                <h3 class="timeline-title">Software Engineering Intern (QA-Focused)</h3>
-                <p class="timeline-subtitle">Profibook - United States of America</p>
-                <ul>
-                    <li>Designed and executed 3,000+ automated unit tests with Jest, which reduced deployment errors by 50% and ensured greater stability across web and mobile applications</li>
-                    <li>Identified inefficiencies in the manual web testing process and automated it using Playwright, cutting testing time by more than 80 percent and significantly improving release efficiency</li>
-                    <li>Performed smoke tests that improved code quality by 15%, strengthening release confidence and user experience</li>
-                    <li>Collaborated with senior developers to debug and refine backend services in NestJS and TypeScript, quickly adapting to new frameworks and applying feedback to accelerate learning</li>
-                </ul>
-            </div>
-              <div class="timeline-item">
-                <div class="timeline-date">January 2025 - May 2025</div>
-                <h3 class="timeline-title">AI and Automation Extern</h3>
-                <p class="timeline-subtitle">Outamation - Texas, United States of America</p>
-                <ul>
-                    <li>Engineered AI-powered workflows to automate document classification and data extraction, using Natural Language Processing (NLP), Computer Vision, and Python-based pipelines (PyMuPDF, OCR techniques)</li>
-                    <li>Designed and implemented a retrieval system using LlamaIndex and Retrieval-Augmented Generation (RAG), boosting information discovery accuracy across mortgage-related files; benchmarked open-source AI models to fine-tune performance</li>
-                    <li>Authored a strategic technical report distilling insights on leading AI solutions for document automation, detailing system limitations, enhancement techniques, and practical deployment considerations for enterprise use</li>
-                </ul>
-            </div>
-
-              <div class="timeline-item">
-                    <div class="timeline-date">May 2022 - January 2025</div>
-                    <h3 class="timeline-title">Software Engineer and Sales Manager</h3>
-                    <p class="timeline-subtitle">Laotinoa Local Solutions - Ibadan, Oyo state, Nigeria</p>
-                    <ul>
-                        <li>Built a custom inventory management system from scratch to digitize and centralize procurement and stock records, replacing Excel and enabling accurate, real-time tracking of over 200 product lines</li>
-                        <li>Integrated live inventory and pricing data into an AI-powered customer service assistant, drastically reducing response time and enhancing customer satisfaction</li>
-                        <li>Optimized restocking workflows by embedding demand forecasting into the system, leading to a 20% reduction in inventory-related losses and more efficient supplier coordination</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">September 2023 - November 2023</div>
-                    <h3 class="timeline-title">Research Intern</h3>
-                    <p class="timeline-subtitle">Colton Alexander - Colorado, USA</p>
-                    <ul>
-                        <li>Spearheaded AI-enhanced market research to identify high-potential startups in the renewable energy sector, leveraging custom-built web scraping scripts and NLP tools to extract and analyze company data</li>
-                        <li>Developed a data-driven profiling framework to assess financial health, technology differentiation, and sustainability impact, enabling the VC team to make evidence-backed portfolio decisions</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">June 2023 - July 2023</div>
-                    <h3 class="timeline-title">Venture Capital Extern</h3>
-                    <p class="timeline-subtitle">IgniteXL Ventures - United States of America</p>
-                    <ul>
-                        <li>Leveraged prompt engineering and AI-powered research tools to streamline due diligence and enhance internal workflows, accelerating the evaluation of early-stage startups in the emerging tech and consumer innovation sectors</li>
-                        <li>Identified high-potential investment opportunities by synthesizing market trend data, founder profiles, and competitive landscapes, earning formal recognition for excellence in venture sourcing and analysis</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">January 2024 - Present</div>
-                    <h3 class="timeline-title">Peer Coach</h3>
-                    <p class="timeline-subtitle">CCAPS, Ashesi University - Ghana</p>
-                    <ul>
-                        <li>Provide academic and emotional support to peers</li>
-                        <li>Facilitated 21 group sessions on mental health and resilience</li>
-                        <li>Guide students through stress management and study techniques</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">March 2024 - Present</div>
-                    <h3 class="timeline-title">Digital Health Champion</h3>
-                    <p class="timeline-subtitle">African Digital Health Student Network</p>
-                    <ul>
-                        <li>Advocate for adoption of digital tools in African healthcare systems</li>
-                        <li>Contribute to research and events focused on digital health literacy</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">September 2023 - Present</div>
-                    <h3 class="timeline-title">Student Volunteer</h3>
-                    <p class="timeline-subtitle">Code4All Initiative</p>
-                    <ul>
-
-                        
-                        <li>Designed and facilitated interactive workshops to elevate the digital literacy of 70+ students, equipping them with essential tech skills for academic and professional success.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">August 2023 - February 2025</div>
-                    <h3 class="timeline-title">Senior Ambassador</h3>
-                    <p class="timeline-subtitle">Extern - New York, USA</p>
-                    <ul>
-                        <li>Spearheaded outreach campaigns that led to 200+ externship applications with top brands</li>
-                        <li>Provided application guidance to prospective students, increasing program visibility</li>
-                    </ul>
-                </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Projects Section*/}
-        <section className="projects" id="projects">
-          <div className="container">
-            <h2 className="section-title">Featured Projects</h2>
-            <p>My work focuses on creating human-centered solutions with measurable impact.</p>
-            
-            <div className="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src={healingCellsImage} alt="Healthcare Project" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">HealingCells – Cancer Support Platform</h3>
-                        <p class="project-desc">A web platform supporting cancer patients, survivors, and caregivers with reliable resources and emotional support. Designed based on research with actual patients to address emotional and informational needs.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="http://austineiheji.great-site.net/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/alotanna/cancerwebsite.git" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-              
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src= {gaeaImage} alt="Grow Africa Eat Africa" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Grow Africa Eat Africa</h3>
-                        <p class="project-desc">Co-founded an initiative developing sustainable clay brick storage chambers to reduce post-harvest losses and extend crop shelf life for smallholder farmers across Africa.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Sustainability</span>
-                            <span class="tech-tag">Agriculture</span>
-                            <span class="tech-tag">Field Research</span>
-                            <span class="tech-tag">Product Design</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.canva.com/design/DAGrJt1Yj_A/EvaKNcv4KnEHjXsmhXDwpw/view?utm_content=DAGrJt1Yj_A&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h540085aeb4" target="_blank"><i class="fas fa-external-link-alt"></i> Project Details</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src= {gpaPredictorImage} alt="GPA Predictor Interface" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI GPA Predictor and Academic Advisor</h3>
-                        <p class="project-desc">Co-developed an AI-powered academic advisor that predicts GPA based on lifestyle factors, trained with 92% accuracy and integrated with Cohere's Command-Xlarge language model for personalized advice.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Neural Networks</span>
-                            <span class="tech-tag">Cohere API</span>
-                            <span class="tech-tag">Data Science</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/alotanna/AI_GPA_Predictor_and_Academic_Advisor-.git" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src= {samaCareImage} alt="SamaCare" />
-
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">SamaCare - Bringing health care to your doorstep</h3>
-                        <p class="project-desc">Co-developed an AI-powered healthcare platform enabling patients to book appointments, access medical records, and receive symptom-based triage recommendations via an integrated machine learning chatbot using a Random Forest model hosted using Flask API. </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">ML</span>
-                            <span class="tech-tag">Flask</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Ama-Annor/SamaCare.git" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src= {kelenneImage} alt="Kelenne Car Wash Interface" />
-
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Kelenne Car Wash Management System </h3>
-                        <p class="project-desc">Co-developed a fully functional web application for Kelenne Car Wash, enabling customers to seamlessly book appointments, view service offerings, and much more. </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/alotanna/Kelenne.git" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src= {eventManagerImage} alt="Event Manager Application Interface" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Event Manager Application  </h3>
-                        <p class="project-desc">Designed and implemented an event management system capable of handling bill tracking, food coordination, activity scheduling, and venue logistics.•	Utilized Java for backend logic and FXML for a user-friendly interface. </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">FXML</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/alotanna/EventManger.git" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="contact" id="contact">
-          <div className="container">
-            <h2 className="section-title">Get In Touch</h2>
-            <p>Got a project idea? A wild collaboration dream? Or just bored and want to send a message? I'm here for it.</p>
-            <p>This is not a drill, or a fake contact section. I actually set this thing up (and triple-checked it after yelling at my screen a few times).</p> 
-            <p>So go ahead, type something real(like your real email and messgae), hit send, and voilà-you’ll get a confirmation, I’ll get your message, and the universe will be in balance. Let’s do something epic. Or at least mildly interesting. Either way, I’m excited!</p>
-            
-            <div className="contact-wrapper">
-              <div className="contact-info">
-                <div className="contact-item">
-                  <i className="fas fa-envelope"></i>
-                  <div className="contact-text">
-                    <h4>Email</h4>
-                    <p>austine.iheji@ashesi.edu.gh</p>
-                    <p>austineihejiben12@gmail.com</p>
+              <div className="hero-visual reveal-up delay-1">
+                <div className="portrait-card">
+                  <div className="portrait-frame">
+                    <img src={austineImage} alt="Austine Iheji" />
+                  </div>
+                  <div className="portrait-caption">
+                    <span>Computer Science, Ashesi University</span>
+                    <strong>Frontend, AI, and impact-driven product work</strong>
                   </div>
                 </div>
-                
-                <div className="contact-item">
-                  <i className="fas fa-phone"></i>
-                  <div className="contact-text">
-                    <h4>Phone</h4>
-                    <p>(+233) 534817766</p>
-                    <p>(+234) 8102903790</p>
-                  </div>
+
+                <div className="floating-note note-top">
+                  <span>Current mode</span>
+                  <strong>Interface-first thinking</strong>
                 </div>
-                
-                <div className="contact-item">
-                  <i className="fas fa-map-marker-alt"></i>
-                  <div className="contact-text">
-                    <h4>Location</h4>
-                    <p>Ashesi University, Ghana</p>
-                  </div>
+
+                <div className="floating-note note-bottom">
+                  <span>Style</span>
+                  <strong>Clean, editorial, memorable</strong>
                 </div>
-                
+              </div>
+            </div>
+          </section>
+
+          <section className="ticker-band" aria-label="Design principles">
+            <div className="ticker-track">
+              <span>Human-centered products</span>
+              <span>Visual systems</span>
+              <span>AI workflows</span>
+              <span>Design polish</span>
+              <span>Frontend craftsmanship</span>
+              <span>Research-led execution</span>
+              <span>Human-centered products</span>
+              <span>Visual systems</span>
+              <span>AI workflows</span>
+              <span>Design polish</span>
+              <span>Frontend craftsmanship</span>
+              <span>Research-led execution</span>
+            </div>
+          </section>
+
+          <section className="section about" id="about">
+            <div className="container about-grid">
+              <div className="section-head reveal-up">
+                <p className="eyebrow">About</p>
+                <h2>Built for work that needs taste, structure, and real-world usefulness.</h2>
+                <p>
+                  I started in Human Physiology before moving into Computer Science, so I tend to think about software from both the technical side and the human side. That mix shapes how I design, build, and ship.
+                </p>
+              </div>
+
+              <div className="about-panel reveal-up delay-1">
+                <p>
+                  I care about products that solve actual problems, whether they sit in healthcare, agriculture, education, or internal operations. I like interfaces that feel calm, systems that are easy to trust, and details that make a portfolio feel designed instead of assembled.
+                </p>
+                <p>
+                  Outside of work, I stay close to emerging AI tools, good food, and the kind of experimentation that keeps ideas sharp.
+                </p>
+              </div>
+
+              <div className="about-rail reveal-up delay-2">
+                {focusCards.map((card) => (
+                  <article key={card.title} className="focus-card">
+                    <h3>{card.title}</h3>
+                    <p>{card.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section capabilities" id="capabilities">
+            <div className="container">
+              <div className="section-head narrow reveal-up">
+                <p className="eyebrow">Capabilities</p>
+                <h2>A compact stack that moves between product, code, and research.</h2>
+              </div>
+
+              <div className="capability-grid">
+                {capabilityGroups.map((group) => (
+                  <article key={group.title} className="capability-card reveal-up">
+                    <h3>{group.title}</h3>
+                    <div className="chip-row">
+                      {group.items.map((item) => (
+                        <span key={item} className="chip">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section experience" id="experience">
+            <div className="container">
+              <div className="section-head narrow reveal-up">
+                <p className="eyebrow">Experience</p>
+                <h2>A mix of product delivery, research, and operational problem-solving.</h2>
+              </div>
+
+              <div className="experience-stack">
+                {experienceItems.map((item) => (
+                  <article key={item.title} className="experience-card reveal-up">
+                    <div className="experience-meta">
+                      <span>{item.period}</span>
+                      <h3>{item.title}</h3>
+                      <p>{item.org}</p>
+                    </div>
+                    <ul>
+                      {item.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section projects" id="projects">
+            <div className="container">
+              <div className="section-head narrow reveal-up">
+                <p className="eyebrow">Selected work</p>
+                <h2>Projects presented with a cleaner editorial rhythm and stronger visual hierarchy.</h2>
+              </div>
+
+              <div className="projects-grid">
+                {projectItems.map((project) => (
+                  <article key={project.title} className={`project-card reveal-up ${project.featured ? 'featured' : ''}`}>
+                    <div className="project-media">
+                      <img src={project.image} alt={project.title} />
+                    </div>
+                    <div className="project-body">
+                      <div>
+                        <p className="project-kicker">{project.featured ? 'Featured project' : 'Selected project'}</p>
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                      </div>
+
+                      <div className="chip-row compact">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="chip subtle">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="project-links">
+                        {project.links.map((link) => (
+                          <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+                            {link.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="section contact" id="contact">
+            <div className="container contact-grid">
+              <div className="section-head reveal-up">
+                <p className="eyebrow">Contact</p>
+                <h2>Open to selective collaborations, product work, and thoughtful design problems.</h2>
+                <p>
+                  If you want a portfolio site, a product interface, or a system that feels sharper and more premium, send the details over.
+                </p>
+              </div>
+
+              <div className="contact-info reveal-up delay-1">
+                {contactDetails.map((detail) => (
+                  <article key={detail.label} className="contact-card">
+                    <div className="contact-icon">
+                      <i className={`fas ${detail.icon}`}></i>
+                    </div>
+                    <div>
+                      <h3>{detail.label}</h3>
+                      {detail.values.map((value) => (
+                        <p key={value}>{value}</p>
+                      ))}
+                    </div>
+                  </article>
+                ))}
+
                 <div className="social-links">
-                  <a href="http://www.linkedin.com/in/austine-lotanna-iheji" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
-                  <a href="https://github.com/alotanna" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
+                  <a href="http://www.linkedin.com/in/austine-lotanna-iheji" target="_blank" rel="noreferrer">
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://github.com/alotanna" target="_blank" rel="noreferrer">
+                    <i className="fab fa-github"></i>
+                  </a>
                 </div>
               </div>
-              
-              <div className="contact-form">
+
+              <div className="contact-form reveal-up delay-2">
                 <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <input type="text" className="form-control" name="name" placeholder="Your Name" required />
-                  </div>
-                  <div className="form-group">
-                    <input type="email" className="form-control" name="email" placeholder="Your Email" required />
+                  <div className="form-row">
+                    <input type="text" className="form-control" name="name" placeholder="Your name" required />
+                    <input type="email" className="form-control" name="email" placeholder="Email address" required />
                   </div>
                   <div className="form-group">
                     <input type="text" className="form-control" name="subject" placeholder="Subject" />
                   </div>
                   <div className="form-group">
-                    <textarea className="form-control" name="message" placeholder="Your Message" required></textarea>
+                    <textarea className="form-control" name="message" placeholder="Tell me what you want to build" required></textarea>
                   </div>
-                  <button type="submit" className="btn" disabled={isSubmitting}>
-                    {isSubmitting ? (
-                      <span><i className="fas fa-spinner fa-spin"></i> Sending...</span>
-                    ) : (
-                      <span>Send Message</span>
-                    )}
+                  <button type="submit" className="btn btn-primary form-submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send message'}
                   </button>
                   <div className="form-status" dangerouslySetInnerHTML={{ __html: formStatus }}></div>
                 </form>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </main>
 
-        {/* Footer */}
-        <footer>
-          <div className="container">
-            <p className="footer-text">© 2025 Austine Iheji. All rights reserved.</p>
+        <footer className="site-footer">
+          <div className="container footer-inner">
+            <p>© 2025 Austine Iheji. Crafted with clarity.</p>
+            <a href="#home">Back to top</a>
           </div>
         </footer>
-
-        {/* Back to Top Button */}
-        <a href="#about" className="back-to-top">
-          <i className="fas fa-arrow-up"></i>
-        </a>
       </div>
     </>
   );
